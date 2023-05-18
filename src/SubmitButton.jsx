@@ -8,7 +8,7 @@ function SubmitButton({ setData }) {
     fetch('https://www.terriblytinytales.com/test.txt')
       .then(response => response.text())
       .then(data => {
-        // Parse the text data and count the occurrence of each word
+        
         const words = data.toLowerCase().split(/[^\w']+/);
         const counts = {};
         for (let i = 0; i < words.length; i++) {
@@ -20,7 +20,7 @@ function SubmitButton({ setData }) {
           }
         }
 
-        // Sort the word counts in descending order and take the top 20 most occurring words
+       
         const sortedCounts = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 20);
         setWordCounts(sortedCounts);
 
